@@ -42,6 +42,7 @@ fs.readdirSync(schemasDir).forEach(file => {
     const schema = require(path.join(schemasDir, file));
     const route = '/' + file.replace('.json', '');
     schemas[route] = schema;
+    console.log(`[schema-load] Loaded schema for route: ${route} from file: ${file}`);
   }
 });
 
