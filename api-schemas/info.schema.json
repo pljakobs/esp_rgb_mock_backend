@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "/info response",
+  "type": "object",
+  "properties": {
+    "deviceid": { "type": "integer" },
+    "current_rom": { "type": "string" },
+    "git_version": { "type": "string" },
+    "build_type": { "type": "string" },
+    "git_date": { "type": "string" },
+    "webapp_version": { "type": "string" },
+    "sming": { "type": "string" },
+    "event_num_clients": { "type": "integer" },
+    "uptime": { "type": "integer" },
+    "cpu_usage_percent": { "type": "number" },
+    "heap_free": { "type": "integer" },
+    "soc": { "type": "string" },
+    "rgbww": {
+      "type": "object",
+      "properties": {
+        "version": { "type": "string" },
+        "queuesize": { "type": "integer" }
+      },
+      "required": ["version", "queuesize"]
+    },
+    "connection": {
+      "type": "object",
+      "properties": {
+        "connected": { "type": "boolean" },
+        "ssid": { "type": "string" },
+        "dhcp": { "type": "boolean" },
+        "ip": { "type": "string" },
+        "netmask": { "type": "string" },
+        "gateway": { "type": "string" },
+        "mac": { "type": "string" }
+      },
+      "required": ["connected", "ssid", "dhcp", "ip", "netmask", "gateway", "mac"]
+    }
+  },
+  "required": ["deviceid", "current_rom", "git_version", "build_type", "git_date", "webapp_version", "sming", "event_num_clients", "uptime", "cpu_usage_percent", "heap_free", "soc", "rgbww", "connection"]
+}

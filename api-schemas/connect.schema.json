@@ -1,0 +1,7 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "/connect request/response",
+  "type": "object",
+  "properties": {},
+  "description": "POST request may contain WiFi credentials, but schema is not strictly defined. Response is a generic API code object."
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "/update request",
+  "type": "object",
+  "properties": {
+    "rom": {
+      "type": "object",
+      "properties": {
+        "url": { "type": "string", "format": "uri" }
+      },
+      "required": ["url"]
+    }
+  },
+  "required": ["rom"],
+  "description": "POST request. 'rom.url' is required. Response is a generic API code object."
+}

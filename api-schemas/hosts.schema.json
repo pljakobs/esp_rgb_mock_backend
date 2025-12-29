@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "/hosts response",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": { "type": "string" },
+      "name": { "type": "string" },
+      "state": { "type": "string" },
+      "ip": { "type": "string" },
+      "lastSeen": { "type": "integer" }
+    },
+    "required": ["id", "name", "state", "ip", "lastSeen"]
+  },
+  "description": "GET request. Returns a list of controllers/hosts."
+}

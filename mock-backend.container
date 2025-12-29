@@ -1,0 +1,17 @@
+[Unit]
+Description=ESP RGB Mock Backend
+
+[Container]
+Image=node:20
+# Mount your repo into the container
+Volume=/srv/esp_rgb_mock_backend:/app:Z
+WorkingDir=/app
+# Pull latest code and install deps before start
+ExecStartPre=git -C /app pull
+ExecStartPre=npm --prefix /app install
+ExecStart=npm start
+# Expose port 3000 inside the pod
+PublishPort=3000
+
+[Install]
+WantedBy=default.target

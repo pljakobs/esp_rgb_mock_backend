@@ -1,0 +1,7 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "/scan_networks request/response",
+  "type": "object",
+  "properties": {},
+  "description": "POST request, no body required. Response is a generic API code object."
+}

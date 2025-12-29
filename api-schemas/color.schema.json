@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "API Color Command Schema (Flexible)",
+  "description": "Schema for /color endpoint, supporting HSV/CT, RAW, and multi-command posts.",
+  "type": "object",
+  "properties": {
+    "cmds": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/singleColorCommand" }
+    }
+  },
+  "definitions": {
+    "absOrRelValue": {
+      "oneOf": [
+        { "type": "number" },
+        { "type": "string" }
+      ]
+    },
+    "hsvct": {
+      "type": "object",
+      "properties": {
+        "h": { "$ref": "#/definitions/absOrRelValue" },
+        "s": { "$ref": "#/definitions/absOrRelValue" },
+        "v": { "$ref": "#/definitions/absOrRelValue" },
+        "ct": { "$ref": "#/definitions/absOrRelValue" }
+      },
+      "additionalProperties": false
+    },
+    "raw": {
+      "type": "object",
+      "properties": {
+        "r": { "$ref": "#/definitions/absOrRelValue" },
+        "g": { "$ref": "#/definitions/absOrRelValue" },
+        "b": { "$ref": "#/definitions/absOrRelValue" },
+        "ww": { "$ref": "#/definitions/absOrRelValue" },
+        "cw": { "$ref": "#/definitions/absOrRelValue" }
+      },
+      "additionalProperties": false
+    },
+    "singleColorCommand": {
+      "type": "object",
+      "properties": {
+        "cmd": { "type": "string", "default": "solid" },
+        "hsv": { "$ref": "#/definitions/hsvct" },
+        "hsvFrom": { "$ref": "#/definitions/hsvct" },
+        "raw": { "$ref": "#/definitions/raw" },
+        "rawFrom": { "$ref": "#/definitions/raw" },
+        "ramp": { "oneOf": [ { "type": "number" }, { "type": "string" } ] },
+        "direction": { "type": "integer" },
+        "queue": { "type": "string" },
+        "requeue": { "type": "boolean" },
+        "name": { "type": "string" },
+        "channels": {
+          "type": "array",
+          "items": { "type": "integer" }
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "oneOf": [
+    { "$ref": "#/definitions/singleColorCommand" },
+    {
+      "type": "object",
+      "properties": {
+        "cmds": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/singleColorCommand" }
+        }
+      },
+      "required": ["cmds"]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "/system request",
+  "type": "object",
+  "properties": {
+    "cmd": { "type": "string" },
+    "enable": { "type": "boolean" }
+  },
+  "required": ["cmd"],
+  "description": "POST request. 'cmd' is required. If cmd=='debug', 'enable' boolean is also required. Response is a generic API code object."
+}
