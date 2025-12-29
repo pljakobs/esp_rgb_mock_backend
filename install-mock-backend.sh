@@ -47,7 +47,7 @@ chown $MOCK_USER:$MOCK_USER "$NGINX_CONF_DEST"
 systemctl daemon-reload
 
 # Enable and start services (system-wide)
-systemctl enable --now podman-mock-backend.service
-systemctl enable --now podman-nginx.service
+systemctl start  mock-backend.service
+systemctl start  nginx.service
 
 echo "Installation complete. Backend will be available on port 80 via nginx, running as user 'mock'."

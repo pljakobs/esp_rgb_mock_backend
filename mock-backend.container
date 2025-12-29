@@ -5,8 +5,8 @@ Description=ESP RGB Mock Backend
 [Container]
 # Use the published image from GitHub Container Registry
 Image=ghcr.io/pljakobs/esp_rgb_mock_backend:latest
-# Expose port 3000 inside the pod
-PublishPort=3000
+# Expose port 3000 on the host and map to container port 3000
+PublishPort=3000:3000
 
 [Install]
 WantedBy=default.target
