@@ -3,8 +3,8 @@ Description=ESP RGB Mock Backend
 
 
 [Container]
-# Use a fully qualified image
-Image=docker.io/library/node:20
+# Use the published image from GitHub Container Registry
+Image=ghcr.io/pljakobs/esp_rgb_mock_backend:latest
 # Mount your repo into the container
 Volume=/srv/esp_rgb_mock_backend:/app:Z
 Volume=/srv/esp_rgb_mock_backend/start-mock-backend.sh:/start-mock-backend.sh:Z
