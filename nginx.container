@@ -2,7 +2,7 @@
 Description=nginx reverse proxy for mock backend
 
 [Container]
-Image=nginx:alpine
+Image=docker.io/library/nginx:alpine
 Volume=/srv/nginx-mock.conf:/etc/nginx/nginx.conf:Z
 # Expose port 80 on the host
 PublishPort=80:80
