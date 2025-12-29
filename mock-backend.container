@@ -9,10 +9,11 @@ Image=docker.io/library/node:20
 Volume=/srv/esp_rgb_mock_backend:/app:Z
 Volume=/srv/esp_rgb_mock_backend/start-mock-backend.sh:/start-mock-backend.sh:Z
 WorkingDir=/app
-# Run entrypoint script inside the container
-ExecStart=/bin/sh /start-mock-backend.sh
 # Expose port 3000 inside the pod
 PublishPort=3000
+
+[Exec]
+ExecStart=/bin/sh /start-mock-backend.sh
 
 [Install]
 WantedBy=default.target
