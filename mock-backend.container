@@ -12,7 +12,7 @@ WorkingDir=/app
 # Expose port 3000 inside the pod
 PublishPort=3000
 # Run entrypoint script inside the container
-ExecStart=/bin/sh /start-mock-backend.sh
+Command=/bin/sh /start-mock-backend.sh
 
 [Install]
 WantedBy=default.target
