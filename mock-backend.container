@@ -1,8 +1,8 @@
 [Unit]
 Description=ESP RGB Mock Backend
 
-[Container]
 
+[Container]
 # Use a fully qualified image
 Image=docker.io/library/node:20
 # Mount your repo into the container
@@ -11,8 +11,7 @@ Volume=/srv/esp_rgb_mock_backend/start-mock-backend.sh:/start-mock-backend.sh:Z
 WorkingDir=/app
 # Expose port 3000 inside the pod
 PublishPort=3000
-
-[Exec]
+# Run entrypoint script inside the container
 ExecStart=/bin/sh /start-mock-backend.sh
 
 [Install]
