@@ -5,6 +5,8 @@ Description=ESP RGB Mock Backend
 [Container]
 # Use the published image from GitHub Container Registry
 Image=ghcr.io/pljakobs/esp_rgb_mock_backend:latest
+# Load environment variables from .env file
+EnvironmentFile=/srv/esp_rgb_mock_backend/.env
 # Expose port 3000 on the host and map to container port 3000
 PublishPort=3000:3000
 
