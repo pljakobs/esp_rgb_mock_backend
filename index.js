@@ -1,3 +1,23 @@
+// Deeply rewrite all $ref values containing '/$defs/' to local $defs refs
+function deepRewriteRefs(obj) {
+  if (Array.isArray(obj)) {
+    obj.forEach(deepRewriteRefs);
+  } else if (obj && typeof obj === 'object') {
+    for (const key of Object.keys(obj)) {
+      if (key === '$ref' && typeof obj[key] === 'string') {
+        let ref = obj[key];
+        const idx = ref.indexOf('/$defs/');
+        if (idx !== -1) {
+          const refDef = ref.substring(idx + 7); // after '/$defs/'
+          obj[key] = `#/$defs/${refDef}`;
+          // Optionally log: console.log(`[schema-ref] Rewrote $ref from '${ref}' to '${obj[key]}'`);
+        }
+      } else {
+        deepRewriteRefs(obj[key]);
+      }
+    }
+  }
+}
 require('dotenv').config();
 const express = require('express');
 const helmet = require('helmet');
@@ -104,6 +124,8 @@ Object.entries(schemas).forEach(([route, schema]) => {
     }
     // Generate mock response
     let responseSchema = schema.response || schema;
+    // Deeply rewrite $ref values before generating mock data
+    deepRewriteRefs(responseSchema);
     const mock = jsf.generate(responseSchema);
     res.json(mock);
   });
