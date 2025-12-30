@@ -113,6 +113,15 @@ app.get('/', (req, res) => {
   res.json({ status: 'ok', endpoints: Object.keys(schemas) });
 });
 
-app.listen(PORT, () => {
+
+const server = app.listen(PORT, () => {
   console.log(`Mock backend running on port ${PORT}`);
+});
+
+// Graceful shutdown on SIGTERM
+process.on('SIGTERM', () => {
+  console.log('Received SIGTERM, shutting down...');
+  server.close(() => {
+    process.exit(0);
+  });
 });
