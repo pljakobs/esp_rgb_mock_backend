@@ -222,56 +222,5 @@
         }
       }
     }
-  },
-  "$defs": {
-    "Preset": {
-      "type": "object",
-      "properties": {
-        "id": {"type": "string"}
-      }
-    },
-    "raw": {
-      "type": "object",
-      "properties": {
-        "ww": {"type": "integer", "minimum": 0, "maximum": 1023, "alias": "warmwhite"},
-        "r": {"type": "integer", "minimum": 0, "maximum": 1023, "alias": "red"},
-        "b": {"type": "integer", "minimum": 0, "maximum": 1023, "alias": "blue"},
-        "cw": {"type": "integer", "minimum": 0, "maximum": 1023, "alias": "coldwhite"},
-        "g": {"type": "integer"}
-      }
-    },
-    "hsv": {
-      "type": "object",
-      "properties": {
-        "s": {"alias": "sat"},
-        "v": {"alias": "val"},
-        "h": {"alias": "hue"},
-        "ct": {}
-      }
-    },
-    "hsvct": {
-      "type": "object",
-      "properties": {
-        "s": {"alias": "sat"},
-        "v": {"alias": "val"},
-        "h": {"alias": "hue"},
-        "ct": {}
-      }
-    },
-    "color": {
-      "oneOf": [
-        {"$ref": "#/$defs/hsv"},
-        {"$ref": "#/$defs/hsvct"},
-        {"$ref": "#/$defs/raw"}
-      ]
-    },
-    "pin": {"type": "integer", "minimum": 0, "maximum": 255},
-    "channel": {
-      "type": "object",
-      "properties": {
-        "name": {"type": "string"},
-        "pin": {"type": "integer", "minimum": 0, "maximum": 255}
-      }
-    }
   }
 }

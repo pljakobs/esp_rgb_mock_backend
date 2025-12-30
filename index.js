@@ -32,17 +32,60 @@ if (API_KEY) {
   });
 }
 
-// Load all schemas from ./api-schemas
+// Load all schemas from ./api-schemas, supporting .json and .cfgdb files
 const schemasDir = path.join(__dirname, 'api-schemas');
 const ajv = new Ajv();
 let schemas = {};
 
+function loadSchemaFile(filePath) {
+  return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+}
+
+function mergeDefsIfRef(schema, schemasDir) {
+  // Recursively search for $ref and merge defs if needed
+  function merge(obj) {
+    if (Array.isArray(obj)) {
+      obj.forEach(merge);
+    } else if (obj && typeof obj === 'object') {
+      for (const key of Object.keys(obj)) {
+        if (key === '$ref' && typeof obj[key] === 'string') {
+          const ref = obj[key];
+          // Only handle refs like 'defs/$defs/hsvct' (file/...) and only first occurrence
+          const match = ref.match(/^([a-zA-Z0-9_-]+)\//);
+          if (match) {
+            const refFile = match[1];
+            const defsPath = path.join(schemasDir, refFile + '.cfgdb');
+            if (fs.existsSync(defsPath)) {
+              const defsSchema = loadSchemaFile(defsPath);
+              // Merge $defs from defsSchema into current schema if not already present
+              if (defsSchema.$defs) {
+                if (!schema.$defs) schema.$defs = {};
+                Object.assign(schema.$defs, defsSchema.$defs);
+                console.log(`[schema-merge] Merged $defs from ${refFile}.cfgdb into schema`);
+              }
+            }
+            // Only merge the first $ref found
+            return;
+          }
+        } else {
+          merge(obj[key]);
+        }
+      }
+    }
+  }
+  merge(schema);
+}
+
 fs.readdirSync(schemasDir).forEach(file => {
-  if (file.endsWith('.json')) {
-    const schema = require(path.join(schemasDir, file));
-    // Remove both .json and .schema from the filename
-    let baseName = file.replace('.json', '').replace('.schema', '');
+  if (file.endsWith('.json') || file.endsWith('.cfgdb')) {
+    let schema = loadSchemaFile(path.join(schemasDir, file));
+    // Remove .json, .cfgdb, and .schema from the filename
+    let baseName = file.replace(/\.(json|cfgdb)$/, '').replace('.schema', '');
+    // Remove leading app- for endpoint naming
+    if (baseName.startsWith('app-')) baseName = baseName.slice(4);
     const route = '/' + baseName;
+    // Merge defs if $ref found
+    mergeDefsIfRef(schema, schemasDir);
     schemas[route] = schema;
     console.log(`[schema-load] Loaded schema for route: ${route} from file: ${file}`);
   }
