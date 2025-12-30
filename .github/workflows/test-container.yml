@@ -31,11 +31,17 @@ jobs:
           docker run -d --name mock-backend -p 3000:3000 esp_rgb_mock_backend:test
           sleep 5
 
-      - name: Test /app-data endpoint
+      - name: Test all endpoints
         run: |
-          curl --fail --silent http://localhost:3000/app-data > response.json
-          cat response.json
-          jq . response.json
+          curl --fail --silent http://localhost:3000/ > endpoints.json
+          cat endpoints.json
+          jq . endpoints.json
+          for ep in $(jq -r '.endpoints[]' endpoints.json); do
+            echo "Testing endpoint: $ep"
+            curl --fail --silent "http://localhost:3000$ep" > response.json
+            cat response.json
+            jq . response.json
+          done
 
       - name: Stop and remove container
         run: |
