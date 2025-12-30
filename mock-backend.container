@@ -9,7 +9,6 @@ Pull=always
 # Load environment variables from .env file
 EnvironmentFile=/srv/esp_rgb_mock_backend/.env
 # Ensure backend is discoverable by nginx via DNS
-Name=systemd-mock-backend
 # Use a shared network for DNS resolution
 Network=mock-net
 # Expose port 3000 on the host and map to container port 3000
