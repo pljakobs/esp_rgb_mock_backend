@@ -50,6 +50,18 @@ const schemasDir = path.join(__dirname, 'api-schemas');
 const ajv = new Ajv({ strict: false });
 let schemas = {};
 let mockState = {}; // In-memory store for stateful endpoints
+let defaultData = {};
+
+// Load default data if available
+const defaultDataPath = path.join(__dirname, 'default-data.json');
+if (fs.existsSync(defaultDataPath)) {
+  try {
+    defaultData = JSON.parse(fs.readFileSync(defaultDataPath, 'utf-8'));
+    console.log('Loaded default-data.json');
+  } catch (e) {
+    console.error('Failed to load default-data.json:', e.message);
+  }
+}
 
 function loadSchemaFile(filePath) {
   return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
@@ -186,14 +198,14 @@ fs.readdirSync(schemasDir).forEach(file => {
     schemas[route] = schema;
     
     // Initialize state if it's a store or specific endpoints we want to be stateful
-    if (schema.store || file.includes('app-data') || file.includes('app-config') || route === '/color') {
+    if (schema.store || file.includes('app-data') || file.includes('app-config') || route === '/color' || route === '/info') {
       // Generate initial mock data
       let responseSchema = schema.response || schema;
       deepRewriteRefs(responseSchema);
       try {
         // Check if we have a default data file for this route
-        if (route === '/data' && fs.existsSync(path.join(__dirname, 'default-data.json'))) {
-           mockState[route] = JSON.parse(fs.readFileSync(path.join(__dirname, 'default-data.json'), 'utf-8'));
+        if (route === '/data' && Object.keys(defaultData).length > 0) {
+           mockState[route] = defaultData;
            console.log(`Initialized state for ${route} from default-data.json`);
         } else {
            mockState[route] = jsf.generate(responseSchema);
@@ -238,6 +250,55 @@ app.get('/networks', (req, res) => {
 app.post('/scan_networks', (req, res) => {
   isScanning = true;
   res.json({ success: true });
+});
+
+// /hosts
+app.get('/hosts', (req, res) => {
+  // Get controllers from state (loaded from default-data.json) or generate
+  let controllers = [];
+  if (mockState['/data'] && mockState['/data'].controllers) {
+    controllers = JSON.parse(JSON.stringify(mockState['/data'].controllers)); // Deep copy
+  } else {
+    // Fallback if no data
+    controllers = [];
+  }
+
+  // Get deviceid from /info
+  let deviceId = 0;
+  if (mockState['/info'] && mockState['/info'].deviceid) {
+    deviceId = mockState['/info'].deviceid;
+  }
+
+  // Map to expected format and apply overrides
+  const hosts = controllers.map(c => {
+    return {
+      id: c.id,
+      hostname: c.name, // Map name to hostname
+      ip_address: 'mock.lightinator.de', // Override IP
+      visible: true // Default to visible
+    };
+  });
+
+  // Ensure one entry is "mock" with matching deviceId
+  const mockIndex = hosts.findIndex(h => h.hostname === 'mock' || h.hostname === 'Mock');
+  if (mockIndex !== -1) {
+    hosts[mockIndex].hostname = 'mock';
+    hosts[mockIndex].id = deviceId;
+  } else if (hosts.length > 0) {
+    // Pick the first one and make it mock
+    hosts[0].hostname = 'mock';
+    hosts[0].id = deviceId;
+  } else {
+    // Create one if empty
+    hosts.push({
+      id: deviceId,
+      hostname: 'mock',
+      ip_address: 'mock.lightinator.de',
+      visible: true
+    });
+  }
+
+  res.json({ hosts: hosts });
 });
 
 // /set_on & /set_off
