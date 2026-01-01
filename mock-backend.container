@@ -1,5 +1,7 @@
 [Unit]
 Description=ESP RGB Mock Backend
+Requires=mock-net-network.service
+After=mock-net-network.service
 
 
 [Container]

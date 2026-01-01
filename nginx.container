@@ -1,5 +1,7 @@
 [Unit]
 Description=nginx reverse proxy for mock backend
+Requires=mock-net-network.service
+After=mock-net-network.service
 
 [Container]
 Image=docker.io/library/nginx:latest
