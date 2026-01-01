@@ -37,7 +37,8 @@ chown -R $MOCK_USER:$MOCK_USER "$BACKEND_DIR"
 mkdir -p "$QUADLET_DIR"
 cp mock-backend.container "$QUADLET_DIR/"
 cp nginx.container "$QUADLET_DIR/"
-chown root:root "$QUADLET_DIR/mock-backend.container" "$QUADLET_DIR/nginx.container"
+cp mock-net.network "$QUADLET_DIR/"
+chown root:root "$QUADLET_DIR/mock-backend.container" "$QUADLET_DIR/nginx.container" "$QUADLET_DIR/mock-net.network"
 
 # Copy nginx config
 cp "$NGINX_CONF_SRC" "$NGINX_CONF_DEST"
