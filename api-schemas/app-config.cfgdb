@@ -13,14 +13,16 @@
         },
         "device_name": {
           "type": "string",
-          "default":""
+          "default":"",
+          "pattern": "^[a-zA-Z0-9\\-]+$"
         },
         "buttons_debounce_ms": {
           "type": "integer",
           "default":50
         },
         "buttons_config": {
-          "type": "string"
+          "type": "string",
+          "pattern": "^(\\d+(,\\d+)*)?$"
         },
         "pin_config_url":{
             "type":"string",
@@ -66,30 +68,41 @@
       "properties": {
         "startup_color": {
           "type": "string",
-          "default": "last"
+          "default": "last",
+          "pattern": "^(last|[0-9.]+,[0-9.]+,[0-9.]+)$"
         },
         "brightness": {
           "type": "object",
           "properties": {
             "red": {
               "type": "integer",
-              "default":100
+              "default":100,
+              "minimum": 0,
+              "maximum": 100
             },
             "ww": {
               "type": "integer",
-              "default":100
+              "default":100,
+              "minimum": 0,
+              "maximum": 100
             },
             "green": {
               "type": "integer",
-              "default":100
+              "default":100,
+              "minimum": 0,
+              "maximum": 100
             },
             "blue": {
               "type": "integer",
-              "default":100
+              "default":100,
+              "minimum": 0,
+              "maximum": 100
             },
             "cw": {
               "type": "integer",
-              "default":100
+              "default":100,
+              "minimum": 0,
+              "maximum": 100
             }
           }
         },
@@ -109,7 +122,9 @@
         "color_mode": {
           "type": "integer",
           "default":0,
-          "alias":[ "outputmode", "colormode"]
+          "alias":[ "outputmode", "colormode"],
+          "minimum": 0,
+          "maximum": 3
         },
         "hsv": {
           "type": "object",
