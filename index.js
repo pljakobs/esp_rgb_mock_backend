@@ -191,8 +191,14 @@ fs.readdirSync(schemasDir).forEach(file => {
       let responseSchema = schema.response || schema;
       deepRewriteRefs(responseSchema);
       try {
-        mockState[route] = jsf.generate(responseSchema);
-        console.log(`Initialized state for ${route}`);
+        // Check if we have a default data file for this route
+        if (route === '/data' && fs.existsSync(path.join(__dirname, 'default-data.json'))) {
+           mockState[route] = JSON.parse(fs.readFileSync(path.join(__dirname, 'default-data.json'), 'utf-8'));
+           console.log(`Initialized state for ${route} from default-data.json`);
+        } else {
+           mockState[route] = jsf.generate(responseSchema);
+           console.log(`Initialized state for ${route} from schema`);
+        }
       } catch (e) {
         console.error(`Failed to generate initial state for ${route}:`, e.message);
         mockState[route] = {};

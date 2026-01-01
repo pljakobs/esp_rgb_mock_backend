@@ -1,0 +1,752 @@
+{
+  "sync-lock": {
+    "id": "",
+    "ts": 0
+  },
+  "last-color": {
+    "s": 0,
+    "v": 47,
+    "h": 0,
+    "ct": 2700
+  },
+  "presets": [
+    {
+      "color": {
+        "raw": {
+          "ww": 542,
+          "r": 431,
+          "b": 303,
+          "cw": 760,
+          "g": 588
+        }
+      },
+      "name": "Test",
+      "id": "10966439-655712395",
+      "favorite": false,
+      "ts": 2147483647,
+      "icon": "palette"
+    },
+    {
+      "color": {
+        "hsv": {
+          "s": 66,
+          "v": 83,
+          "h": 301,
+          "ct": 0
+        }
+      },
+      "name": "Pink",
+      "id": "10966439-624801566",
+      "favorite": false,
+      "ts": 2147483647,
+      "icon": "palette"
+    },
+    {
+      "color": {
+        "hsv": {
+          "s": 90,
+          "v": 89,
+          "h": 241,
+          "ct": 0
+        }
+      },
+      "name": "Blau",
+      "id": "10966439-685623466",
+      "favorite": false,
+      "ts": 2147483647,
+      "icon": "palette"
+    },
+    {
+      "color": {
+        "hsv": {
+          "s": 90,
+          "v": 89,
+          "h": 113,
+          "ct": 0
+        }
+      },
+      "name": "Grün",
+      "id": "10966439-737984847",
+      "favorite": false,
+      "ts": 2147483647,
+      "icon": "palette"
+    },
+    {
+      "color": {
+        "hsv": {
+          "s": 88,
+          "v": 89,
+          "h": 184,
+          "ct": 0
+        }
+      },
+      "name": "Petrol",
+      "id": "10966439-515417152",
+      "favorite": false,
+      "ts": 2147483647,
+      "icon": "palette"
+    },
+    {
+      "color": {
+        "raw": {
+          "ww": 1023,
+          "r": 1023,
+          "b": 1023,
+          "cw": 1023,
+          "g": 1023
+        }
+      },
+      "name": "RAW max",
+      "id": "2827530-419906442",
+      "favorite": false,
+      "ts": 2147483647,
+      "icon": "palette"
+    },
+    {
+      "color": {
+        "hsv": {
+          "s": 0,
+          "v": 100,
+          "h": 0,
+          "ct": 0
+        }
+      },
+      "name": "Voll",
+      "id": "10964518-938075610",
+      "favorite": false,
+      "ts": 2147483647,
+      "icon": "palette"
+    },
+    {
+      "color": {
+        "hsv": {
+          "s": 0,
+          "v": 0,
+          "h": 0,
+          "ct": 0
+        }
+      },
+      "name": "Aus",
+      "id": "6737456-819298884",
+      "favorite": false,
+      "ts": 2147483647,
+      "icon": "palette"
+    },
+    {
+      "color": {
+        "hsv": {
+          "s": 56,
+          "v": 23,
+          "h": 247,
+          "ct": 0
+        }
+      },
+      "name": "Nachtblau",
+      "id": "10964518-122507691",
+      "favorite": true,
+      "ts": 2147483647,
+      "icon": "palette"
+    },
+    {
+      "color": {
+        "hsv": {
+          "s": 0,
+          "v": 47,
+          "h": 0,
+          "ct": 0
+        }
+      },
+      "name": "eher so mittel",
+      "id": "6737456-248766862",
+      "favorite": true,
+      "ts": 2147483647,
+      "icon": "palette"
+    },
+    {
+      "color": {
+        "hsv": {
+          "s": 37,
+          "v": 43,
+          "h": 0,
+          "ct": 0
+        }
+      },
+      "name": "dunkelrot",
+      "id": "4035244248-168429429",
+      "favorite": false,
+      "ts": 2147483647,
+      "icon": "palette"
+    },
+    {
+      "color": {
+        "hsv": {
+          "s": 28,
+          "v": 55,
+          "h": 0,
+          "ct": 0
+        }
+      },
+      "name": "test",
+      "id": "6668181-927384476",
+      "favorite": false,
+      "ts": 2147483647,
+      "icon": "palette"
+    }
+  ],
+  "controllers": [
+    {
+      "id": "-65228924",
+      "name": "Lightinator_4229738372",
+      "ip-address": "192.168.29.80",
+      "icon": "https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/floor_lamp/default/24px.svg",
+      "ts": 2147483647
+    },
+    {
+      "id": "390774",
+      "name": "led-te1",
+      "ip-address": "192.168.29.112",
+      "icon": "lights/led-strip-variant",
+      "ts": 0
+    },
+    {
+      "id": "4599343",
+      "name": "led-facelight",
+      "ip-address": "192.168.29.122",
+      "icon": "lights/led-strip-variant",
+      "ts": 0
+    },
+    {
+      "id": "6668181",
+      "name": "lightinator-6668181",
+      "ip-address": "192.168.29.31",
+      "icon": "lights/led-strip-variant",
+      "ts": 0
+    },
+    {
+      "id": "10964518",
+      "name": "lightinator-10964518",
+      "ip-address": "192.168.29.49",
+      "icon": "lights/led-strip-variant",
+      "ts": 0
+    },
+    {
+      "id": "1451258",
+      "name": "led-te2",
+      "ip-address": "192.168.29.111",
+      "icon": "lights/led-strip-variant",
+      "ts": 0
+    },
+    {
+      "id": "2826766",
+      "name": "led-wo",
+      "ip-address": "192.168.29.102",
+      "icon": "lights/led-strip-variant",
+      "ts": 0
+    },
+    {
+      "id": "12742997",
+      "name": "led-so2",
+      "ip-address": "192.168.29.115",
+      "icon": "lights/led-strip-variant",
+      "ts": 0
+    },
+    {
+      "id": "6737456",
+      "name": "led-be",
+      "ip-address": "192.168.29.125",
+      "icon": "lights/led-strip-variant",
+      "ts": 0
+    },
+    {
+      "id": "15603867",
+      "name": "lightinator-15603867",
+      "ip-address": "192.168.29.113",
+      "icon": "lights/led-strip-variant",
+      "ts": 0
+    },
+    {
+      "id": "2827485",
+      "name": "led-ku",
+      "ip-address": "192.168.29.121",
+      "icon": "lights/led-strip-variant",
+      "ts": 0
+    },
+    {
+      "id": "2147483647",
+      "name": "lightinator-2625453751",
+      "ip-address": "192.168.29.81",
+      "icon": "lights/led-strip-variant",
+      "ts": 0
+    },
+    {
+      "id": "2827530",
+      "name": "LED-Bu",
+      "ip-address": "192.168.29.101",
+      "icon": "lights/led-strip-variant",
+      "ts": 0
+    }
+  ],
+  "groups": [
+    {
+      "controller_ids": [
+        "2827530",
+        "4599343"
+      ],
+      "name": "Büro",
+      "ts": 2147483647,
+      "id": "477228760-883885021",
+      "icon": "light_groups"
+    },
+    {
+      "controller_ids": [
+        "6737456"
+      ],
+      "name": "Schlafzimmer",
+      "ts": 2147483647,
+      "id": "6737456-706129657",
+      "icon": "light_groups"
+    },
+    {
+      "controller_ids": [
+        "390774",
+        "1451258"
+      ],
+      "name": "Terasse",
+      "ts": 2147483647,
+      "id": "4035244248-578276531",
+      "icon": "light_groups"
+    },
+    {
+      "controller_ids": [
+        "15603867",
+        "2826766",
+        "12742997"
+      ],
+      "name": "Wohnzimmer",
+      "ts": 2147483647,
+      "id": "2827530-876452071",
+      "icon": "light_groups"
+    },
+    {
+      "controller_ids": [
+        "2827485"
+      ],
+      "name": "Küche",
+      "ts": 2147483647,
+      "id": "2826766-821578832",
+      "icon": "light_groups"
+    },
+    {
+      "controller_ids": [
+        "390774",
+        "1451258"
+      ],
+      "name": "Terasse",
+      "ts": 2147483647,
+      "id": "1451258-365585363",
+      "icon": "light_groups"
+    },
+    {
+      "controller_ids": [
+        "15603867",
+        "2826766",
+        "12742997"
+      ],
+      "name": "Wohnzimmer",
+      "ts": 2147483647,
+      "id": "10966439-661872862",
+      "icon": "light_groups"
+    },
+    {
+      "controller_ids": [
+        "2827485"
+      ],
+      "name": "Küche",
+      "ts": 2147483647,
+      "id": "10966439-714453458",
+      "icon": "light_groups"
+    },
+    {
+      "controller_ids": [
+        "2827530",
+        "4229738372",
+        "3894194052"
+      ],
+      "name": "Büro",
+      "ts": 2147483647,
+      "id": "10966439-800901917",
+      "icon": "light_groups"
+    },
+    {
+      "controller_ids": [
+        "10964518"
+      ],
+      "name": "Flur",
+      "ts": 2147483647,
+      "id": "10966439-704388484",
+      "icon": "light_groups"
+    },
+    {
+      "controller_ids": [
+        "10966439",
+        "2147483647",
+        "4229738372"
+      ],
+      "name": "test",
+      "ts": 2147483647,
+      "id": "10966439-668115440",
+      "icon": "light_groups"
+    },
+    {
+      "controller_ids": [
+        "6737456"
+      ],
+      "name": "Schlafzimmer",
+      "ts": 2147483647,
+      "id": "10966439-206273324",
+      "icon": "light_groups"
+    },
+    {
+      "controller_ids": [
+        "390774",
+        "1451258"
+      ],
+      "name": "Terasse",
+      "ts": 2147483647,
+      "id": "4229738372-553671184",
+      "icon": "light_groups"
+    }
+  ],
+  "scenes": [
+    {
+      "transition": {
+        "d": 0,
+        "t": 0,
+        "s": 0,
+        "cmd": null,
+        "q": null,
+        "r": false
+      },
+      "settings": [
+        {
+          "transition": {
+            "d": 0,
+            "t": 10000,
+            "s": 0,
+            "cmd": "fade",
+            "q": "single",
+            "r": false
+          },
+          "color": {
+            "hsv": {
+              "s": 0,
+              "v": 0,
+              "h": 0,
+              "ct": 0
+            }
+          },
+          "controller_id": "6737456",
+          "pos": 0
+        }
+      ],
+      "name": "Aus",
+      "ts": 2147483647,
+      "id": "2827530-709189565",
+      "group_id": "6737456-706129657",
+      "favorite": false,
+      "icon": "scene"
+    },
+    {
+      "transition": {
+        "d": 0,
+        "t": 0,
+        "s": 0,
+        "cmd": null,
+        "q": null,
+        "r": false
+      },
+      "settings": [
+        {
+          "transition": {
+            "d": 0,
+            "t": 10000,
+            "s": 0,
+            "cmd": "fade",
+            "q": null,
+            "r": false
+          },
+          "color": {
+            "hsv": {
+              "s": 0,
+              "v": 0,
+              "h": 0,
+              "ct": 0
+            }
+          },
+          "controller_id": "2827530",
+          "pos": 0
+        },
+        {
+          "transition": {
+            "d": 0,
+            "t": 0,
+            "s": 0,
+            "cmd": null,
+            "q": null,
+            "r": false
+          },
+          "color": {
+            "hsv": {
+              "s": 0,
+              "v": 0,
+              "h": 0,
+              "ct": 3620
+            }
+          },
+          "controller_id": "4599343",
+          "pos": 0
+        },
+        {
+          "transition": {
+            "d": 0,
+            "t": 10000,
+            "s": 0,
+            "cmd": "fade",
+            "q": null,
+            "r": true
+          },
+          "color": {
+            "hsv": {
+              "s": 81,
+              "v": 84,
+              "h": 236,
+              "ct": 0
+            }
+          },
+          "controller_id": "2827530",
+          "pos": 2
+        },
+        {
+          "transition": {
+            "d": 0,
+            "t": 0,
+            "s": 10000,
+            "cmd": "fade",
+            "q": null,
+            "r": false
+          },
+          "color": {
+            "hsv": {
+              "s": 96,
+              "v": 87,
+              "h": 0,
+              "ct": 0
+            }
+          },
+          "controller_id": "2827530",
+          "pos": 1
+        },
+        {
+          "transition": {
+            "d": 0,
+            "t": 15000,
+            "s": 0,
+            "cmd": "fade",
+            "q": null,
+            "r": false
+          },
+          "color": {
+            "hsv": {
+              "s": 0,
+              "v": 54,
+              "h": 0,
+              "ct": 0
+            }
+          },
+          "controller_id": "4599343",
+          "pos": 1
+        },
+        {
+          "transition": {
+            "d": 0,
+            "t": 15000,
+            "s": 0,
+            "cmd": "fade",
+            "q": null,
+            "r": false
+          },
+          "color": {
+            "hsv": {
+              "s": 0,
+              "v": 15,
+              "h": 0,
+              "ct": 0
+            }
+          },
+          "controller_id": "4599343",
+          "pos": 2
+        }
+      ],
+      "name": "Snapshot 19:23:26",
+      "ts": 2147483647,
+      "id": "6668181-227004589",
+      "group_id": "477228760-883885021",
+      "favorite": false,
+      "icon": "scene"
+    },
+    {
+      "transition": {
+        "d": 0,
+        "t": 0,
+        "s": 0,
+        "cmd": null,
+        "q": null,
+        "r": false
+      },
+      "settings": [
+        {
+          "transition": {
+            "d": 0,
+            "t": 0,
+            "s": 0,
+            "cmd": null,
+            "q": null,
+            "r": false
+          },
+          "color": {
+            "hsv": {
+              "s": 15,
+              "v": 49,
+              "h": 0,
+              "ct": 0
+            }
+          },
+          "controller_id": "6737456",
+          "pos": 0
+        }
+      ],
+      "name": "An",
+      "ts": 2147483647,
+      "id": "3090114465-796372243",
+      "group_id": "6737456-706129657",
+      "favorite": false,
+      "icon": "scene"
+    },
+    {
+      "transition": {
+        "d": 0,
+        "t": 0,
+        "s": 0,
+        "cmd": null,
+        "q": null,
+        "r": false
+      },
+      "settings": [
+        {
+          "transition": {
+            "d": 0,
+            "t": 10000,
+            "s": 0,
+            "cmd": "fade",
+            "q": "single",
+            "r": false
+          },
+          "color": {
+            "hsv": {
+              "s": 0,
+              "v": 0,
+              "h": 0,
+              "ct": 0
+            }
+          },
+          "controller_id": "6737456",
+          "pos": 0
+        }
+      ],
+      "name": "Aus",
+      "ts": 2147483647,
+      "id": "2827530-877137044",
+      "group_id": "6737456-706129657",
+      "favorite": false,
+      "icon": "scene"
+    },
+    {
+      "transition": {
+        "d": 0,
+        "t": 0,
+        "s": 0,
+        "cmd": null,
+        "q": null,
+        "r": false
+      },
+      "settings": [
+        {
+          "transition": {
+            "d": 0,
+            "t": 0,
+            "s": 0,
+            "cmd": null,
+            "q": null,
+            "r": false
+          },
+          "color": {
+            "hsv": {
+              "s": 0,
+              "v": 0,
+              "h": 0,
+              "ct": 0
+            }
+          },
+          "controller_id": "12742997",
+          "pos": 0
+        },
+        {
+          "transition": {
+            "d": 0,
+            "t": 0,
+            "s": 0,
+            "cmd": null,
+            "q": null,
+            "r": false
+          },
+          "color": {
+            "hsv": {
+              "s": 49,
+              "v": 44,
+              "h": 21,
+              "ct": 0
+            }
+          },
+          "controller_id": "15603867",
+          "pos": 0
+        },
+        {
+          "transition": {
+            "d": 0,
+            "t": 0,
+            "s": 0,
+            "cmd": null,
+            "q": null,
+            "r": false
+          },
+          "color": {
+            "hsv": {
+              "s": 9.775171,
+              "v": 7.917889,
+              "h": 21.055719,
+              "ct": 0
+            }
+          },
+          "controller_id": "2826766",
+          "pos": 0
+        }
+      ],
+      "name": "Snapshot 22:51:58",
+      "ts": 2147483647,
+      "id": "3090114465-422218882",
+      "group_id": "2827530-876452071",
+      "favorite": true,
+      "icon": "scene"
+    }
+  ]
+}
