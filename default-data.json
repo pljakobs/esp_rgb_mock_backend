@@ -195,23 +195,11 @@
   ],
   "controllers": [
     {
-      "id": "-65228924",
-      "name": "Lightinator_4229738372",
-      "ip-address": "192.168.29.80",
-      "icon": "https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/floor_lamp/default/24px.svg",
-      "ts": 2147483647
-    },
-    {
       "id": "390774",
       "name": "led-te1",
       "ip-address": "192.168.29.112",
-      "icon": "lights/led-strip-variant",
-      "ts": 0
-    },
-    {
-      "id": "4599343",
-      "name": "led-facelight",
-      "ip-address": "192.168.29.122",
+      "visible": true,
+      "state": 3,
       "icon": "lights/led-strip-variant",
       "ts": 0
     },
@@ -219,20 +207,8 @@
       "id": "6668181",
       "name": "lightinator-6668181",
       "ip-address": "192.168.29.31",
-      "icon": "lights/led-strip-variant",
-      "ts": 0
-    },
-    {
-      "id": "10964518",
-      "name": "lightinator-10964518",
-      "ip-address": "192.168.29.49",
-      "icon": "lights/led-strip-variant",
-      "ts": 0
-    },
-    {
-      "id": "1451258",
-      "name": "led-te2",
-      "ip-address": "192.168.29.111",
+      "visible": true,
+      "state": 3,
       "icon": "lights/led-strip-variant",
       "ts": 0
     },
@@ -240,27 +216,8 @@
       "id": "2826766",
       "name": "led-wo",
       "ip-address": "192.168.29.102",
-      "icon": "lights/led-strip-variant",
-      "ts": 0
-    },
-    {
-      "id": "12742997",
-      "name": "led-so2",
-      "ip-address": "192.168.29.115",
-      "icon": "lights/led-strip-variant",
-      "ts": 0
-    },
-    {
-      "id": "6737456",
-      "name": "led-be",
-      "ip-address": "192.168.29.125",
-      "icon": "lights/led-strip-variant",
-      "ts": 0
-    },
-    {
-      "id": "15603867",
-      "name": "lightinator-15603867",
-      "ip-address": "192.168.29.113",
+      "visible": true,
+      "state": 3,
       "icon": "lights/led-strip-variant",
       "ts": 0
     },
@@ -268,6 +225,71 @@
       "id": "2827485",
       "name": "led-ku",
       "ip-address": "192.168.29.121",
+      "visible": true,
+      "state": 3,
+      "icon": "lights/led-strip-variant",
+      "ts": 0
+    },
+    {
+      "id": "10964518",
+      "name": "lightinator-10964518",
+      "ip-address": "192.168.29.49",
+      "visible": true,
+      "state": 3,
+      "icon": "lights/led-strip-variant",
+      "ts": 0
+    },
+    {
+      "id": "12742997",
+      "name": "led-so2",
+      "ip-address": "192.168.29.115",
+      "visible": true,
+      "state": 3,
+      "icon": "lights/led-strip-variant",
+      "ts": 0
+    },
+    {
+      "id": "6737456",
+      "name": "led-be",
+      "ip-address": "192.168.29.125",
+      "visible": true,
+      "state": 3,
+      "icon": "lights/led-strip-variant",
+      "ts": 0
+    },
+    {
+      "id": "1451258",
+      "name": "led-te2",
+      "ip-address": "192.168.29.111",
+      "visible": true,
+      "state": 3,
+      "icon": "lights/led-strip-variant",
+      "ts": 0
+    },
+    {
+      "id": "4599343",
+      "name": "led-facelight",
+      "ip-address": "192.168.29.122",
+      "visible": true,
+      "state": 3,
+      "icon": "lights/led-strip-variant",
+      "ts": 0
+    },
+    {
+      "id": "15603867",
+      "name": "lightinator-15603867",
+      "ip-address": "192.168.29.113",
+      "visible": true,
+      "state": 3,
+      "icon": "lights/led-strip-variant",
+      "ts": 0
+    },
+    {
+      "id": "2827530",
+      "name": "LED_Bu",
+      "ip-address": "192.168.29.101",
+      "visible": true,
+      "state": 4,
       "icon": "lights/led-strip-variant",
       "ts": 0
     },
@@ -275,13 +297,8 @@
       "id": "2147483647",
       "name": "lightinator-2625453751",
       "ip-address": "192.168.29.81",
-      "icon": "lights/led-strip-variant",
-      "ts": 0
-    },
-    {
-      "id": "2827530",
-      "name": "LED-Bu",
-      "ip-address": "192.168.29.101",
+      "visible": false,
+      "state": 2,
       "icon": "lights/led-strip-variant",
       "ts": 0
     }
@@ -748,5 +765,333 @@
       "favorite": true,
       "icon": "scene"
     }
-  ]
+  ],
+  "info": {
+    "deviceid": 2827530,
+    "current_rom": "rom0",
+    "git_version": "V5.0-566-develop",
+    "build_type": "debug",
+    "git_date": "2026-01-01",
+    "webapp_version": "V5.0-228-devel",
+    "sming": "6.2.0",
+    "event_num_clients": 1,
+    "uptime": 162840,
+    "cpu_usage_percent": 0,
+    "heap_free": 24376,
+    "soc": "esp8266",
+    "rgbww": {
+      "version": "0.9.0",
+      "queuesize": 100
+    },
+    "connection": {
+      "connected": true,
+      "ssid": "IoT",
+      "dhcp": true,
+      "ip": "192.168.29.101",
+      "netmask": "255.255.255.0",
+      "gateway": "192.168.29.1",
+      "mac": "cc50e32b250a"
+    }
+  },
+  "config": {
+    "ota": {
+      "url": "http://lightinator.de/version.json"
+    },
+    "security": {
+      "api_secured": false,
+      "api_password": null
+    },
+    "events": {
+      "color_interval_ms": 500,
+      "color_min_interval_ms": 500,
+      "trans_fin_interval_ms": 1000,
+      "server_enabled": true
+    },
+    "telemetry": {
+      "statsEnabled": "ON",
+      "logEnabled": "ON",
+      "url": "lightinator.de:1883",
+      "user": "rgbww",
+      "password": "rgbwwdebug",
+      "numReboots": 90
+    },
+    "general": {
+      "supported_color_models": [
+        "RGB",
+        "RGBWW",
+        "RGBCW",
+        "RGBWWCW"
+      ],
+      "is_initialized": true,
+      "device_name": "LED_Bu",
+      "buttons_debounce_ms": 50,
+      "buttons_config": null,
+      "pin_config_url": "https://raw.githubusercontent.com/pljakobs/esp_rgb_webapp2/devel/public/config/pinconfig.json",
+      "current_pin_config_name": "mrpj"
+    },
+    "color": {
+      "brightness": {
+        "red": 100,
+        "ww": 100,
+        "green": 100,
+        "blue": 100,
+        "cw": 100
+      },
+      "colortemp": {
+        "ww": 2700,
+        "cw": 6000
+      },
+      "hsv": {
+        "red": 0,
+        "magenta": 0,
+        "green": 0,
+        "blue": 0,
+        "yellow": 0,
+        "model": 0,
+        "cyan": 0
+      },
+      "startup_color": "last",
+      "color_mode": 3
+    },
+    "sync": {
+      "cmd_master_enabled": false,
+      "color_slave_enabled": false,
+      "color_slave_topic": "home/led1/command",
+      "clock_master_enabled": false,
+      "color_master_interval_ms": 0,
+      "clock_slave_enabled": false,
+      "cmd_slave_enabled": false,
+      "clock_master_interval": 30,
+      "clock_slave_topic": "home/led1/clock",
+      "cmd_slave_topic": "home/led/command",
+      "color_master_enabled": false
+    },
+    "network": {
+      "mqtt": {
+        "homeassistant": {
+          "enable": true,
+          "discovery_prefix": "homeassistant",
+          "node_id": null
+        },
+        "server": "mqtt.local",
+        "password": null,
+        "port": 1883,
+        "topic_base": "home/",
+        "enabled": false,
+        "username": null
+      },
+      "ntp": {
+        "enabled": false,
+        "server": "pool.ntp.org",
+        "interval": 3600
+      },
+      "connection": {
+        "netmask": "255.255.255.0",
+        "ip": "192.168.1.1",
+        "dhcp": true,
+        "gateway": "192.168.1.255"
+      },
+      "ap": {
+        "password": "configesp",
+        "secured": true,
+        "ssid": "Lightinator_2827530"
+      },
+      "mdns": {
+        "enabled": true,
+        "name": "LED-Bu"
+      }
+    },
+    "hardware": {
+      "pwm": {
+        "timer": {
+          "speed_mode": "LOWSPEED",
+          "frequency": 1000,
+          "resolution": 10,
+          "number": 0
+        },
+        "spreadSpectrum": {
+          "mode": "ON",
+          "width": 15,
+          "subsampling": 4
+        },
+        "phaseShift": {
+          "mode": "ON"
+        }
+      },
+      "available_pins": [
+        {
+          "pins": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "soc": "esp8266"
+        },
+        {
+          "pins": [
+            0,
+            1,
+            2,
+            4,
+            5,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            21,
+            22,
+            23,
+            25,
+            26,
+            27,
+            32,
+            33
+          ],
+          "soc": "esp32"
+        },
+        {
+          "pins": [
+            0,
+            1,
+            3,
+            4,
+            5,
+            6,
+            7,
+            18,
+            19,
+            20,
+            21
+          ],
+          "soc": "esp32c3"
+        }
+      ],
+      "pinconfigs": [
+        {
+          "channels": [
+            {
+              "name": "red",
+              "pin": 13
+            },
+            {
+              "name": "green",
+              "pin": 12
+            },
+            {
+              "name": "blue",
+              "pin": 14
+            },
+            {
+              "name": "warmwhite",
+              "pin": 5
+            },
+            {
+              "name": "coldwhite",
+              "pin": 4
+            }
+          ],
+          "name": "mrpj",
+          "soc": "esp8266",
+          "model": "rgbww",
+          "clear_pin": 16
+        },
+        {
+          "channels": [
+            {
+              "name": "red",
+              "pin": 0
+            },
+            {
+              "name": "green",
+              "pin": 4
+            },
+            {
+              "name": "blue",
+              "pin": 5
+            },
+            {
+              "name": "warmwhite",
+              "pin": 6
+            },
+            {
+              "name": "coldwhite",
+              "pin": 7
+            }
+          ],
+          "name": "Lightinator Mini",
+          "soc": "esp32c3",
+          "model": "rgbww",
+          "clear_pin": 18
+        },
+        {
+          "channels": [
+            {
+              "name": "red",
+              "pin": 3
+            },
+            {
+              "name": "green",
+              "pin": 4
+            },
+            {
+              "name": "blue",
+              "pin": 5
+            },
+            {
+              "name": "warmwhite",
+              "pin": 18
+            },
+            {
+              "name": "coldwhite",
+              "pin": 19
+            }
+          ],
+          "name": "NodeMC esp32c3 01M",
+          "soc": "esp32c3",
+          "model": "rgbww",
+          "clear_pin": 18
+        },
+        {
+          "channels": [
+            {
+              "name": "red",
+              "pin": 14
+            },
+            {
+              "name": "green",
+              "pin": 4
+            },
+            {
+              "name": "blue",
+              "pin": 5
+            },
+            {
+              "name": "warmwhite",
+              "pin": 15
+            },
+            {
+              "name": "coldwhite",
+              "pin": 12
+            }
+          ],
+          "name": "Shojo PCB (WemosD1 mini)",
+          "soc": "esp8266",
+          "model": "rgbww",
+          "clear_pin": 16
+        }
+      ],
+      "version": 13
+    }
+  }
 }

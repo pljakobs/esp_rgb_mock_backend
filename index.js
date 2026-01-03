@@ -204,7 +204,11 @@ fs.readdirSync(schemasDir).forEach(file => {
       deepRewriteRefs(responseSchema);
       try {
         // Check if we have a default data file for this route
-        if (route === '/data' && Object.keys(defaultData).length > 0) {
+        const dataKey = route.slice(1); // e.g. 'info', 'config'
+        if (defaultData[dataKey]) {
+           mockState[route] = defaultData[dataKey];
+           console.log(`Initialized state for ${route} from default-data.json key '${dataKey}'`);
+        } else if (route === '/data' && Object.keys(defaultData).length > 0) {
            mockState[route] = defaultData;
            console.log(`Initialized state for ${route} from default-data.json`);
         } else {
@@ -269,33 +273,28 @@ app.get('/hosts', (req, res) => {
     deviceId = mockState['/info'].deviceid;
   }
 
+  const showAll = req.query.all === 'true' || req.query.app === 'true';
+
   // Map to expected format and apply overrides
-  const hosts = controllers.map(c => {
+  let hosts = controllers.map(c => {
     return {
       id: c.id,
       hostname: c.name, // Map name to hostname
       ip_address: 'mock.lightinator.de', // Override IP
-      visible: true // Default to visible
+      visible: c.visible !== undefined ? c.visible : true,
+      state: c.state !== undefined ? c.state : 3 // Default to 3 (Online)
     };
   });
 
-  // Ensure one entry is "mock" with matching deviceId
-  const mockIndex = hosts.findIndex(h => h.hostname === 'mock' || h.hostname === 'Mock');
-  if (mockIndex !== -1) {
-    hosts[mockIndex].hostname = 'mock';
-    hosts[mockIndex].id = deviceId;
-  } else if (hosts.length > 0) {
-    // Pick the first one and make it mock
-    hosts[0].hostname = 'mock';
-    hosts[0].id = deviceId;
-  } else {
-    // Create one if empty
-    hosts.push({
-      id: deviceId,
-      hostname: 'mock',
-      ip_address: 'mock.lightinator.de',
-      visible: true
-    });
+  // Filter if not showing all
+  if (!showAll) {
+    hosts = hosts.filter(h => h.visible);
+  }
+
+  // Ensure the "self" device has state 4 (Connected/Self) if it matches deviceId
+  const selfIndex = hosts.findIndex(h => String(h.id) === String(deviceId));
+  if (selfIndex !== -1) {
+    hosts[selfIndex].state = 4;
   }
 
   res.json({ hosts: hosts });
